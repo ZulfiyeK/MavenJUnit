@@ -39,12 +39,12 @@ public class C05_RadioButtonClassWork {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.get("https://techproeducation.com");
+        driver.get("https://www.facebook.com");
     }
 
     @Test
     public void facebook() throws InterruptedException {
-        driver.get("https://www.facebook.com");
+
         WebElement sifreniMiUnuttun = driver.findElement(By.xpath("//*[text()='Şifreni mi Unuttun?']"));
 
         WebElement CreateAnAccount = driver.findElement(with(By.tagName("a")).below(sifreniMiUnuttun));

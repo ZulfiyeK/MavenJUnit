@@ -3,13 +3,12 @@ package techproed.day10_TestBase;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
 
 public class C04_DropDown extends TestBase {
 
     @Test
-    public void tes1() throws InterruptedException {
+    public void tes1() {
         // https://testcenter.techproeducation.com/index.php?page=dropdown sayfasına gidiniz
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
 

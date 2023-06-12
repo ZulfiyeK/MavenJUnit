@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import utilities.TestBase;
 
-public class TestBaseDemo extends TestBase {
+public class C01_TestBaseDemo extends TestBase {
 
     @Test
     public void test1() {

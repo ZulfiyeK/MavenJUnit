@@ -3,16 +3,10 @@ package techproed.day10_TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-import java.nio.file.WatchEvent;
-
-public class C02_Alert extends TestBase {
-
-      /*
+public class C03_AlertMethods extends TestBase {
+     /*
     https://testcenter.techproeducation.com/index.php?page=javascript-alerts adresine gidin.
 
 
@@ -44,20 +38,19 @@ public class C02_Alert extends TestBase {
 
 
         driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
-        Thread.sleep(1500);
+        bekle(2);//TestBase classimizdan
 
         //1. butona tıklayın,
         driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
-        //2.yol : driver.findElement(By.xpath("(//button)[1]")).click();
-        Thread.sleep(1500);
+        bekle(2);//TestBase classimizdan
 
         // uyarıdaki OK butonuna tıklayın
-        driver.switchTo().alert().accept();  //switchTo(); gecmek, degistirmek anlaminda kullanilir. driver i bulundugu konumdan alert durumna gecirir.
-        Thread.sleep(1500);            // driver'imi alert'un oldugu ortama gecirdim, accept ile de cikan uyariyi ok ile onayladim.
+        alertAccept();  //TestBase classimizdan
+        bekle(2); //TestBase classimizdan
 
 
         // ve result mesajının "successfuly" icermedigini
-         String actuelResult = driver.findElement(By.xpath("//p[@id='result']")).getText();
+        String actuelResult = driver.findElement(By.xpath("//p[@id='result']")).getText();
         String expectedResult = "You successfully clicked an alert";
 
         Assert.assertEquals(actuelResult,expectedResult);
@@ -67,17 +60,17 @@ public class C02_Alert extends TestBase {
     @Test
     public void dismissAlert() throws InterruptedException {
         driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
-        Thread.sleep(1500);
+        bekle(2);
 
 
         //2. butona tıklayın,
         driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
-        //2.yol : driver.findElement(By.xpath("(//button)[2]")).click();
-        Thread.sleep(1500);
+        bekle(2);
 
-        //    uyarıdaki Cancel butonuna tıklayın
-        driver.switchTo().alert().dismiss();
-        Thread.sleep(1500);
+
+        //uyarıdaki Cancel butonuna tıklayın
+        alertDismiss();
+        bekle(2);
 
 
         // ve result mesajının "successfuly" icermedigini test edin.
@@ -92,27 +85,28 @@ public class C02_Alert extends TestBase {
     @Test
     public void sendKeysAlert() throws InterruptedException {
         driver.get("https://testcenter.techproeducation.com/index.php?page=javascript-alerts");
-        Thread.sleep(1500);
+        bekle(2);
 
         //3. butona tıklayın,
         driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
-        //2.yol : driver.findElement(By.xpath("(//button)[2]")).click();
-        Thread.sleep(1500);
+        bekle(2);
 
 
-        //    uyarıdaki mesajı konsolda yazdırın,
-        System.out.println(driver.switchTo().alert().getText());
+        //uyarıdaki mesajı konsolda yazdırın,
+        alertText();
 
 
         // uyarıdaki metin kutusuna isminizi yazin,
-         driver.switchTo().alert().sendKeys("Zulfiye");
+        alertPrompt("Zulfiye");
+        bekle(2);
 
 
         // OK butonuna tıklayın
-        driver.switchTo().alert().accept();
+        alertAccept();
+        bekle(2);
 
 
-        //    ve result mesajında isminizin görüntülendiğini doğrulayın.
+        // ve result mesajında isminizin görüntülendiğini doğrulayın.
         String actuelResult = driver.findElement(By.xpath("//*[@id='result']")).getText();
         String expectedResult = "Zulfiye";
 

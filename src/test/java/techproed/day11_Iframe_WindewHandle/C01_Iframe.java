@@ -56,7 +56,7 @@ public class C01_Iframe extends TestBase{
 
 
         //==>  icteki web sayfasında 'Applications lists' yazisinin görünür oldugunu test edelim
-        driver.switchTo().frame(0);//--> gecis yapmazsak Nosuchelementexception hatasi aliriz.
+        driver.switchTo().frame(0);// index ile aldik. gecis yapmazsak Nosuchelementexception hatasi aliriz.
         String aplicationListYazisi = driver.findElement(By.xpath("//h1")).getText();
         System.out.println(aplicationListYazisi);
         Assert.assertEquals("Applications lists",aplicationListYazisi);
@@ -73,9 +73,31 @@ public class C01_Iframe extends TestBase{
 
         //==>   Ana sayfadaki footer da 'Povered By' yazisinin "Povered" icerdigini test edin
         driver.switchTo().parentFrame();//iframe'den cikmazsam frame icindekini verir, ama ben anasayfadakini istedigim icin anasayfaya gecis yapmam lazim
-       String poveredBy =  driver.findElement(By.xpath("(//*[text()='Povered By'])[1]")).getText();
+        //driver.get(driver.getCurrentUrl()); sayfayi yeniler.
+        //driver.navigate().refresh(); sayfayi yeniler
+        String poveredBy =  driver.findElement(By.xpath("(//*[text()='Povered By'])[1]")).getText();
         System.out.println(poveredBy);
         Assert.assertTrue(poveredBy.contains("Povered By"));
+
+
+
+        //Son olarak sayfa başınlığında iframe yazısının görünür olduğunu test ediniz
+        driver.switchTo().defaultContent();
+        //driver.get(driver.getCurrentUrl()); --> Sayfayı yeniledik
+        //driver.navigate().refresh();
+        WebElement iframeYazisi = driver.findElement(By.xpath("//h3"));
+        Assert.assertTrue(iframeYazisi.isDisplayed());
+        /*
+            Eğer iki tane iframe olsaydı ve 2. frame'e geçmek isteseydik index'i 1 almam gerekicekti
+        <body>
+	            <iframe id="outerIframe" src="https://www.w3schools.com"> --> driver.switchTo().frame("outerIframe")
+		            <iframe id="innerIframe" src="https://www.google.com"></iframe> --> bu örnekte parentFrame ile bir üst frame geçiş yapabiliriz
+	            </iframe>
+            </body>
+
+          İstersek WebElement frame = driver.findElement(By.xpath("//*[@id='outerIframe'")) bu şekilde locate ettiğimiz
+        iframe'e driver.switchTo().frame(frame) geçiş yapabiliriz.
+         */
 
 
 

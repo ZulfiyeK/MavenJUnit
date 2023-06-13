@@ -27,7 +27,7 @@ public abstract class TestBase {
 
     @After
     public void tearDown() throws Exception {
-      //  driver.quit();
+        driver.quit();
     }
 
 

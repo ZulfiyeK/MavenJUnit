@@ -15,6 +15,11 @@ public class C02_Iframe extends TestBase {
         driver.get("https://the-internet.herokuapp.com/iframe");
 
 
+        //sayfadaki toplam iframe sayısını bulunuz.
+        int iframesayisi= driver.findElements(By.tagName("iframe")).size();
+        System.out.println("iframesayisi = " + iframesayisi);
+
+
        //Kalın yazının "Editor" kelimesini içerdiğini doğrulayınız
         String editor = driver.findElement(By.xpath(" //h3")).getText();
         Assert.assertTrue(editor.contains("Editor"));

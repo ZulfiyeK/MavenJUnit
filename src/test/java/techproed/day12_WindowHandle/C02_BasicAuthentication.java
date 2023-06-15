@@ -35,14 +35,5 @@ public class C02_BasicAuthentication extends TestBase {
         Assert.assertTrue(text.contains("Congratulations"));
 
 
-
-
-
-
-
-
-
-
-
     }
 }

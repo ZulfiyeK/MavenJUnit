@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class TestBase {
     //her test classsinda test ve before anotation yaziyorduk..artik testbase class'imiz var burada istedigimiz methotlari depolayabilecegiz.
@@ -77,6 +79,19 @@ public abstract class TestBase {
         select.selectByValue(value);
     }
 
+
+    //switchTo Window -1 (istemsiz acilan sekmeyi handle etme)
+    public void SwitchToWindow(int index){
+        List<String> windows = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(windows.get(index));
+    }
+
+
+    //SwitchTo Window-2 (istemsiz acilan sekmeyi handle etme)
+
+    public void switchToWindow2(int index){
+        driver.switchTo().window(driver.getWindowHandles().toArray()[index].toString());
+    }
 
 
 

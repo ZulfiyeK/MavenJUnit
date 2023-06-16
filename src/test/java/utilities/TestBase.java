@@ -57,8 +57,8 @@ public abstract class TestBase {
     }
 
 
-    public void alertText(){
-        System.out.println(driver.switchTo().alert().getText());
+    public String alertText(){
+        return driver.switchTo().alert().getText();
     }
 
 

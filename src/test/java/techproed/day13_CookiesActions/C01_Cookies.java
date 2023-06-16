@@ -38,8 +38,6 @@ public class C01_Cookies extends TestBase {
         }
 
 
-
-
         //3-Sayfadaki cookies sayisinin 5’den buyuk oldugunu test edin
         System.out.println("Cookie Sayisi :"+cookieSet.size());
         Assert.assertTrue(cookieSet.size()>5);
@@ -72,17 +70,19 @@ public class C01_Cookies extends TestBase {
 
 
 
-
         //7-ismi skin olan cookie’yi silin ve silindigini test edin
         int silinmedenOnce = cookieSet.size();
         System.out.println("Silinmeden Once Cookie Sayisi = "+silinmedenOnce);
         bekle(2);
+
         driver.manage().deleteCookieNamed("skin");//-->ismi skin olan cookie'yi sildik
         bekle(2);
+
         cookieSet = driver.manage().getCookies();//Silindikten sonra cookieSet'e yine atama yapiyoruz guncelliyoruz aksi taktirde fail aliriz
         int silindiktenSonra = cookieSet.size();
         System.out.println("Silindikten Sonra Cookie Sayisi = "+silindiktenSonra);
         Assert.assertEquals(1,(silinmedenOnce-silindiktenSonra));
+
 
 
         //8-tum cookie’leri silin ve silindigini test edin

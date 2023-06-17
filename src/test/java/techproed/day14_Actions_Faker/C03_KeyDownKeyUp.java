@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class C03_KeyDownKeyUp_kontrolel extends TestBase {
+public class C03_KeyDownKeyUp extends TestBase {
     @Test
     public void test() {
 
@@ -56,20 +56,23 @@ public class C03_KeyDownKeyUp_kontrolel extends TestBase {
         aramaKutusu.sendKeys("Selenium",Keys.ENTER);
 
       // Sayfayı bekleyin
-        bekle(4);
+        bekle(3);
 
 
         //Arattığımız kelimeyi arama kutusundan ctrl+x ile keselim
-        driver.findElement(By.xpath("//*[@class='gLFyf']")).//-->sayfa yenilendiği için tekrar locate aldık
-                sendKeys(Keys.CONTROL,"a");//-->Metni kesebilmemiz için önce ctrl+a ile seçmemiz gerekir
+        driver.findElement(By.xpath("//*[@class='gLFyf']")).sendKeys(Keys.CONTROL,"a");
+        //-->sayfa yenilendiği için tekrar locate aldık ve Metni kesebilmemiz için önce ctrl+a ile seçmemiz gerekir
         bekle(2);
-        driver.findElement(By.xpath("//*[@class='gLFyf']")).
-                sendKeys(Keys.CONTROL,"x");//-->Seçilen metni ctrl+x ile kestik
+
+        driver.findElement(By.xpath("//*[@class='gLFyf']")).sendKeys(Keys.CONTROL,"x");//-->Seçilen metni ctrl+x ile kestik
         bekle(2);
+
+
         //Tekrar google sayfasına gidip kestiğimiz kelimeyi ctrl+v ile yapıştırıp tekrar aratalım
-        driver.navigate().to("https://google.com");
-        driver.findElement(By.xpath("//*[@class='gLFyf']")).
-                sendKeys(Keys.CONTROL,"v",Keys.ENTER);//-->Kestiğimiz metni ctrl+v tusu ile tekrar arama kutusuna yapıştırdık ve arattık
+        driver.navigate().back();
+        bekle(2);
+        driver.findElement(By.xpath("//*[@class='gLFyf']")).sendKeys(Keys.CONTROL,"v",Keys.ENTER);
+        //-->Kestiğimiz metni ctrl+v tusu ile tekrar arama kutusuna yapıştırdık ve arattık
 
 
 

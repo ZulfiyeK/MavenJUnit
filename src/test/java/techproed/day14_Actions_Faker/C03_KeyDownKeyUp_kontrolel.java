@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-public class C03_KeyDownKeyUp extends TestBase {
+public class C03_KeyDownKeyUp_kontrolel extends TestBase {
     @Test
     public void test() {
 

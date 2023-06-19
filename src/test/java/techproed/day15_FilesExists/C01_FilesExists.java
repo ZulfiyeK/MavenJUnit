@@ -26,6 +26,12 @@ public class C01_FilesExists {
              Files class'indan exists() methodunu kullanarak Paths.get(dosyayolu) methodunu kullanarak dosynin varligini test edebiliriz.
              Files.exists(Paths.get(filePath));--> bilgisayarimizda dosyanin olup olmadigini kontrol eder.
              Dolayisiyla bu isleme baslamadan once test edecegimiz dosyanin yolunu String bir degiskene assign edebiliriz.
+
+
+             NOT:
+                 Windows10 sürümlerinden önceki sürümler için pratik olarak dosya yolu almak istersek
+                 yolunu almak istediğimiz dosyanun üzerine gelip shift+sag Klik tusuna basarak yol olarak kopyala
+                seçeneği ile dosya yolunu kopyalayabiliriz.
          */
 
         String dosyaYolu = "C:/Users/zulfi/OneDrive/Masaüstü/deneme.docx";

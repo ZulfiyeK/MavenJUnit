@@ -17,7 +17,7 @@ public class C03_FileUploadTest extends TestBase {
 
 
 
-        //"Dosya sec" butonuna basalim
+        //"Dosya sec" butonuna basalim, //Yuklemek istediginiz dosyayi secelim.
         WebElement dosyaSec= driver.findElement(By.id("file-upload"));
         String dosyaYolu = "C:\\Users\\zulfi\\Downloads\\b10 all test cases, code.docx";
         dosyaSec.sendKeys(dosyaYolu);
@@ -28,13 +28,6 @@ public class C03_FileUploadTest extends TestBase {
         // Eger upload ya da dosyaSec butonuna tikladiginizda windows penceresi aciliyorsa ,
         // o webelemente sendKeys() methodu ile dosya gonderemeyebilirsiniz.
         // Boyle bir durumla karsilasirsaniz Romot class'indan obje ile methodlar kullanarak bunu asabilirsiniz.
-
-
-
-
-
-
-        //Yuklemek istediginiz dosyayi secelim.
 
 
         //Upload butonuna basalim.

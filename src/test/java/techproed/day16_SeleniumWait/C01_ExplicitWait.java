@@ -27,14 +27,15 @@ public class C01_ExplicitWait extends TestBase {
         IMPLICITLY WAIT --> Driver'i oluşturduktan sonra sayfadaki tüm webelementlerin etkileşime girebilmesi için
      belirtmiş olduğumuz max. (Duration.ofSecond(20)) süre kadar bekler.
 
-        EXPLICIT WAIT / WebDriverWait--> Bir webelementin sayfa yüklendikten sonra etkileşime girebilmesi için
-     max. belirtmiş olduğumuz süre kadar default(varsayılan) olarak yarım saniyelik aralıklarla bekler. Örneğin bir
-     webelemente tıkladık ve bir alert'ün çıkması zaman alabilir, internet yoğunluğundan yada sayfanın
+        EXPLICIT WAIT /
+            WebDriverWait--> Bir webelementin sayfa yüklendikten sonra etkileşime girebilmesi için
+     max. belirtmiş olduğumuz süre kadar default(varsayılan) olarak yarım saniyelik aralıklarla bekler.
+      Örneğin bir webelemente tıkladık ve bir alert'ün çıkması zaman alabilir, internet yoğunluğundan yada sayfanın
      performansından kaynaklı bu süreyi normalde kullandığımız Thread.sleep() ile de çözebiliriz fakat testimizi
      her çalıştırdığımızda Thread.sleep() için kaç saniye beklemesi gerektiğini kestiremeyebiliriz. Bu gibi
      durumlar için explicit wait kullanırız.
 
-        EXPLICIT WAIT / FluentWait--> Bir webelementin sayfa yüklendikten sonra etkileşime girebilmesi için
+            FluentWait--> Bir webelementin sayfa yüklendikten sonra etkileşime girebilmesi için
      max. belirtmiş olduğumuz süre kadar bizim belirttiğimiz aralıklarda (saniye/salise) bekler
  */
 
@@ -59,8 +60,8 @@ public class C01_ExplicitWait extends TestBase {
 
         Assert.assertEquals("Hello World!", helloWorld.getText());
 
-
     }
+
 
     @Test
     public void test2() {
@@ -77,8 +78,8 @@ public class C01_ExplicitWait extends TestBase {
 
         Assert.assertEquals("Hello World!", helloWorldText.getText());
 
-
     }
+
 
     @Test
     public void test3() {
@@ -96,6 +97,7 @@ public class C01_ExplicitWait extends TestBase {
         Assert.assertEquals("Hello World!", driver.findElement(By.xpath("(//h4)[2]")).getText());
 
     }
+
 
     @Test
     public void test4() {

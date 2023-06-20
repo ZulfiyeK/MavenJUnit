@@ -33,6 +33,5 @@ public class C04_Faker {
         //Meslek pozisyonu
         System.out.println(faker.job().position());
 
-
     }
 }

@@ -3,10 +3,13 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -42,6 +45,26 @@ public abstract class TestBase {
     }
 
 
+    //Selenium Wait/Explicit Wait-visibilityif(elemet) methodu
+    public void visibleWait(WebElement element,int saniye){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+
+    //Selenium Wait/Explicit Wait-visibilityOfElementLocated
+    public void visibleWait(By locator, int saniye){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+
+    //Alert cikana kadar bekle
+    public void alerWait(int saniye){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(saniye));
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
     public void alertAccept(){
         driver.switchTo().alert().accept();
     }
@@ -60,6 +83,8 @@ public abstract class TestBase {
     public String alertText(){
         return driver.switchTo().alert().getText();
     }
+
+
 
 
     public void ddmVisibleText(WebElement ddm,String secenek){

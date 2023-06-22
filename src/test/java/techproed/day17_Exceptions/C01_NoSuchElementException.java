@@ -29,7 +29,7 @@ public class C01_NoSuchElementException extends TestBase {
 
 
         //searchBox'a java yazip aratalim
-        driver.findElement(By.xpath("/input[@id='elementor-search-form-9f26725']")).sendKeys("Java", Keys.ENTER);
+        driver.findElement(By.xpath("/input[@id='elementor-search-form-9f26725']")).sendKeys("Java", Keys.ENTER);//HATALI KOD
         //bilerek hata yaptik ve NoSuchElementException hatasi aldik.
 
 

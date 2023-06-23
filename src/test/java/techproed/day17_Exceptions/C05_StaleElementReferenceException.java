@@ -37,9 +37,5 @@ public class C05_StaleElementReferenceException extends TestBase {
                 break;
             }
         }
-
-
-
-
     }
 }

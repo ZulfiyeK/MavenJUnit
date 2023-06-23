@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class C02_TarihFormatliScreenShot extends TestBase {
+public class C01_TarihFormatliScreenShot extends TestBase {
 
     @Test
     public void test03() throws IOException {
@@ -40,7 +40,7 @@ public class C02_TarihFormatliScreenShot extends TestBase {
 
     @Test
     public void test04() throws IOException {
-        //Techproeducation sayfasına gidelim
+        //Amazon sayfasına gidelim
         driver.get("https://amazon.com");
 
         bekle(2);
@@ -52,8 +52,5 @@ public class C02_TarihFormatliScreenShot extends TestBase {
         TakesScreenshot ts = (TakesScreenshot) driver;
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));
     }
-
-
-
 
 }

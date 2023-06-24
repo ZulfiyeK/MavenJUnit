@@ -47,7 +47,7 @@ public class C01_TarihFormatliScreenShot extends TestBase {
 
         //Ve ekran görüntüsünü alalım
 
-        String tarih = new SimpleDateFormat("_ddMMyyyy_hh_mm").format(new Date());
+        String tarih = new SimpleDateFormat("_ddMMyyyy_hh_mm_ss").format(new Date());
         String dosyaYolu = "src/test/java/tumSayfaResmi/screenShot" + tarih+ ".jpg" ;
         TakesScreenshot ts = (TakesScreenshot) driver;
         FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(dosyaYolu));

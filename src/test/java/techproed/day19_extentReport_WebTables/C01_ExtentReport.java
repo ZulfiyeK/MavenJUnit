@@ -13,7 +13,7 @@ import utilities.TestBase;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class C01_ExtentReports extends TestBase {
+public class C01_ExtentReport extends TestBase {
 
     /*
     Testi calistirdik ve hic bir sorun olmasa bile calistirdigimiz hersey bu raporda olur.
@@ -72,14 +72,13 @@ public class C01_ExtentReports extends TestBase {
         extentTest.info("Sonuc Yazisi konsola yazdirildi");
         extentTest.pass("Sayfa kapatildi");
 
-        /*
-            extentTest objesi ile info() methedunu kullanarak her step'te ne yaptigimizla alakali bilgi yazabiliriz.
-            testimizin sonuna testin bittigini idade eden pass() methodu ile testimiz ile ilgili son bilgiyi ekleyebiliriz.
-            Ve son olarak actions daki gibi perform() methodu gibi extentReports objesi ile flush() methodu kullanarak raporu sonlandiririz.
-         */
+    /*
+      extentTest objesi ile info() methedunu kullanarak her step'te ne yaptigimizla alakali bilgi yazabiliriz.
+      testimizin sonuna testin bittigini idade eden pass() methodu ile testimiz ile ilgili son bilgiyi ekleyebiliriz.
+      Ve son olarak actions daki gibi perform() methodu gibi extentReports objesi ile flush() methodu kullanarak
+                                                                                                  raporu sonlandiririz.
+    */
 
         extentReports.flush();// bu kodu yazmazsak rapor olusmaz.
-
-
     }
 }

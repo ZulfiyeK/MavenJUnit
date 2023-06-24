@@ -45,7 +45,8 @@ public abstract class TestBase {
 
     @After
     public void tearDown() throws Exception {
-      //  driver.quit();
+     // driver.quit();
+        extentReports.flush();
     }
 
     //**********************************************
@@ -197,12 +198,12 @@ public abstract class TestBase {
     }
 
 //*********************************************************************************************************************
-    ExtentReports extentReports;
-    ExtentHtmlReporter extentHtmlReporter;
-    ExtentTest extentTest;
+   protected ExtentReports extentReports;
+    protected ExtentHtmlReporter extentHtmlReporter;
+    protected  ExtentTest extentTest;
 
     //Extent Report Methodu
-    public void extentReport(String testname,String description,String browser,String reportName){
+    public void extentReport(String browser,String reportName){
         extentReports = new ExtentReports();
         String tarih = new SimpleDateFormat("_ddMMyyyy_hh_mm_ss").format(new Date());//gun,ay,yil,saat,dakika,saniye
         String dosyaYolu = "testOutput/extentReports/extentReport"+tarih+".html";
@@ -210,12 +211,12 @@ public abstract class TestBase {
         extentReports.attachReporter(extentHtmlReporter);
 
         //raporda gozukmesini istedigimiz bilgiler icin;
-        extentReports.setSystemInfo("Browser",browser);
+        extentReports.setSystemInfo("Browser",browser);// calistigim browser
         extentReports.setSystemInfo("Tester","Zulfiye");
-        extentHtmlReporter.config().setDocumentTitle("Extent Report");
-        extentHtmlReporter.config().setReportName(reportName);
+        extentHtmlReporter.config().setDocumentTitle("Extent Report"); // titlesine vermek istedigim baslik
+        extentHtmlReporter.config().setReportName(reportName);//hangi test'i yapiyorsam onun adi
+        //extentReports.flush(); yukarida ki @After class icine aldim.
 
-        extentTest= extentReports.createTest(testname,description);
     }
 
 //*********************************************************************************************************************

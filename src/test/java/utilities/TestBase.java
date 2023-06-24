@@ -46,7 +46,7 @@ public abstract class TestBase {
     @After
     public void tearDown() throws Exception {
      // driver.quit();
-        extentReports.flush();
+
     }
 
     //**********************************************
@@ -215,7 +215,7 @@ public abstract class TestBase {
         extentReports.setSystemInfo("Tester","Zulfiye");
         extentHtmlReporter.config().setDocumentTitle("Extent Report"); // titlesine vermek istedigim baslik
         extentHtmlReporter.config().setReportName(reportName);//hangi test'i yapiyorsam onun adi
-        //extentReports.flush(); yukarida ki @After class icine aldim.
+        extentReports.flush();
 
     }
 

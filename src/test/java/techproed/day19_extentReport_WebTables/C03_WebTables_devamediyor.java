@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class C03_WebTables extends TestBase {
+public class C03_WebTables_devamediyor extends TestBase {
     /*
 
     WEBTABLE;

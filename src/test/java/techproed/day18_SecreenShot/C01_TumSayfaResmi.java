@@ -9,8 +9,6 @@ import utilities.TestBase;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class C01_TumSayfaResmi extends TestBase {
 

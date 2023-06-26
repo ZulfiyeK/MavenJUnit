@@ -114,7 +114,7 @@ public class C01_WebTable extends TestBase {
         // Parametre 2 => sutun numarası
         // prinData(2,3) ==> 2. satır, 3. sutundaki veriyi yazdırın
 
-        prinData(2,3);
+        prinData(2,2);
         prinData(2,5);
         prinData(3,3);
        // prinData(3,7);//7.sutun olmadigi icin NoSuchElementException verir.

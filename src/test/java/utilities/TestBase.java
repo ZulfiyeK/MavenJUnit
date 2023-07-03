@@ -221,9 +221,16 @@ public abstract class TestBase {
 
 //*********************************************************************************************************************
 
-
-
-
+//Java Script Executor Click islemi
+    public void click(WebElement element) {
+        try {
+            element.click();
+        } catch (Exception e) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", element);
+        }
+    }
+//*********************************************************************************************************************
 
 
 

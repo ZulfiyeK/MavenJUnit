@@ -9,6 +9,8 @@ import utilities.TestBase;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class C01_ExcelRead extends TestBase {
 
@@ -19,7 +21,7 @@ public class C01_ExcelRead extends TestBase {
 
         //Excel dosyasindan veri okuyabilmemiz icin
         //1- Dosya yolunu almamiz gerkir.
-        String dosyaYolu = "src/test/java/resources/Capitals (2).xlsx";
+        String dosyaYolu = "src/test/java/resources/Capitals (1).xlsx";
 
 
         //2. Dosyayi bizim sistemimize getirmeliyiz.
@@ -41,6 +43,29 @@ public class C01_ExcelRead extends TestBase {
         //Kullanilan satir sayisini bulunuz.
         int kullanilanSatirSayisi = workbook.getSheet("Sheet1").getPhysicalNumberOfRows();//kullanilan satir sayisini verecek bu yuzden int assign etmeliyiz.
         System.out.println("Kullanilan Satir Sayisi = " + kullanilanSatirSayisi);//indeks olarak vermez.
+
+
+    }
+
+    @Test
+    public void readExcelTest2() throws IOException {
+
+        //Capitals dosyasindaki tum verileri yazdiriniz.
+        Map<String,String> capitalsMap = new HashMap<>();// capitals dosyasindaki tum verileri koyabilecegimiz en uygun java objesi map'tir.
+                                                        //Cunku bizim excel dosyamiz key value yapisina benzedigi icin en uygunu map'tir.
+
+        String dosyaYolu = "src/test/java/resources/Capitals (1).xlsx";
+        FileInputStream fis = new FileInputStream(dosyaYolu);
+        Workbook workbook = WorkbookFactory.create(fis);
+        int sonSatirSayisi = workbook.getSheet("Sheet1").getLastRowNum();
+        for (int i = 0; i <= sonSatirSayisi; i++) {
+           String key= workbook.getSheet("Sheet1").getRow(i).getCell(0).toString();//1.stunu yazdiriyorum indeksi 0.
+           String value= workbook.getSheet("Sheet1").getRow(i).getCell(1).toString();//2.stunu yazdiriyorum,indeksi 1.
+           capitalsMap.put(key,value);//map'a put ile key-valu'lari ekledim.
+            System.out.println(key+"/"+value);
+        }
+
+       // System.out.println("capitalsMap = " + capitalsMap);
 
 
     }

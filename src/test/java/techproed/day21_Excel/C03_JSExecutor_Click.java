@@ -13,7 +13,7 @@ public class C03_JSExecutor_Click extends TestBase {
     etkilesimde bulunmak icin standart WebDriver komutlari yetersiz kalabilir
 
     Bu durumda sayfa ile etkilesime gecebilmek icin Java Script Executor ara yuzunu kullanmak gerekir.
-    Java Script Executor ara yuzu sayfaya dogrudan ulasabilir. Ve html kodlari sayet Java Script kullanilarak olusturulmadi,
+    Java Script Executor ara yuzu sayfaya dogrudan ulasabilir. Eger html kodlari sayet Java Script kullanilarak olusturulmadi,
     normal sekilde olusturulduysa bile biz yine Java Script Executor ara yuzunu kullanarak ulasabiliriz.
 
     Ancak mumkunse Webdriverin sundugu standar yontemlerle sayfayle etkilesime gecmek her zaan daha iyidir.

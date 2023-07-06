@@ -232,10 +232,30 @@ public abstract class TestBase {
     }
 //*********************************************************************************************************************
 
+    //Java Script Executor Scroll islemi
+    public void jsScroll(WebElement element){
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
+    }
 
+//*********************************************************************************************************************
 
+    //Java Script Executor  Sayfa Basi Scroll islemi
+    public void jsScrollHome(WebElement element){
 
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+//*********************************************************************************************************************
+
+    //Java Script Executor  Sayfa Basi Scroll islemi
+    public void jsScrollEnd(WebElement element){
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
 
 
 

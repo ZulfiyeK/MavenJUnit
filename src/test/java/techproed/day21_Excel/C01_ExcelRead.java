@@ -30,13 +30,13 @@ public class C01_ExcelRead extends TestBase {
 
         //3. Dosyayi workbook'a atamaliyiz. Java ortaminda bir excel dosyayi olusturmaliyiz.
         Workbook workbook = WorkbookFactory.create(fis);
-       String satir3Sutun1 = workbook.getSheet("Sheet1").getRow(2).getCell(0).toString();//excel de index 0 dan baslar, bu yuzden 3 satir--> 2.indeks
+        String satir3Sutun1 = workbook.getSheet("Sheet1").getRow(2).getCell(0).toString();//excel de index 0 dan baslar, bu yuzden 3 satir--> 2.indeks
                                                                                                                                         //1. stun -->0.indeks
         System.out.println("Satir3 Sutun1 = " + satir3Sutun1);
 
         Assert.assertEquals("France",satir3Sutun1);
 
-        //Son satir satisini bulunuz.
+        //Son satir sayisini bulunuz.
         int sonsatirSayisi = workbook.getSheet("Sheet1").getLastRowNum();
         System.out.println("Son Satir Sayisi = " + (sonsatirSayisi+1));//indeks 0 dan baslayacagi icin bir eksik olacak, ben de tam rakama ulasmak icin +1 ekledim.
 

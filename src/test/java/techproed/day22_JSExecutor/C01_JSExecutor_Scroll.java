@@ -49,19 +49,17 @@ public class C01_JSExecutor_Scroll extends TestBase {
 
 
     // Sayfayi en üste scroll et (sayfayı kaydır)
-        WebElement sayfaBasi = driver.findElement(By.xpath("//div[@class='elementor elementor-10355 elementor-location-header']"));
-        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)",sayfaBasi);
+      //  js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
 
-
-        jsScrollHome(sayfaBasi);
+        jsScrollHome();
         bekle(3);
 
 
     // Sayfayı en alta scroll et (sayfayı kaydır)
-        WebElement sayfaSonu = driver.findElement(By.xpath("(//div[@class='elementor-widget-container'])[66]"));
-        js.executeScript("window.scrollTo(0,document.body.scrollHeight)",sayfaSonu);
 
-        jsScrollEnd(sayfaSonu);
+       // js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+
+        jsScrollEnd();
 
 
 

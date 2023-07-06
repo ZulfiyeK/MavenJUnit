@@ -242,7 +242,7 @@ public abstract class TestBase {
 //*********************************************************************************************************************
 
     //Java Script Executor  Sayfa Basi Scroll islemi
-    public void jsScrollHome(WebElement element){
+    public void jsScrollHome(){
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
@@ -251,7 +251,7 @@ public abstract class TestBase {
 //*********************************************************************************************************************
 
     //Java Script Executor  Sayfa Basi Scroll islemi
-    public void jsScrollEnd(WebElement element){
+    public void jsScrollEnd(){
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");

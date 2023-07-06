@@ -38,9 +38,25 @@ public class C03_JSExecuter_GetValue extends TestBase {
         date.clear();
         date.sendKeys("5/25/2023");
 
+        //  Date webelementinin Attribute degerlerini yazdiralim
+
+        String idAttributeDegeri = js.executeScript("return document.getElementById('checkin_date').id").toString();
+        String typeAttributeDegeri = js.executeScript("return document.getElementById('checkin_date').type").toString();
+        String nameAttributeDegeri = js.executeScript("return document.getElementById('checkin_date').name").toString();
+        String valueAttributeDegeri = js.executeScript("return document.getElementById('checkin_date').value").toString();
+        System.out.println("id Attribute Degeri = " + idAttributeDegeri);
+        System.out.println("type Attribute Degeri = " + typeAttributeDegeri);
+        System.out.println("name Attribute Degeri = " + nameAttributeDegeri);
+        System.out.println("value Attribute Degeri = " + valueAttributeDegeri);
+
+    /*
+        Js executor ile attribute değerlerini yazdırabilmek için js ile locate ettiğimiz webelementin sonuna
+        yukarıdaki örnekteki gibi hangi attributun değeri yazdırmak istersek sonuna attribute adını yazarız.
+    */
+
 
         //Check-In Date kisminin degerini yaziniz
-       String valueAttribute = (String) js.executeScript("return document.getElementById('checkin_date').value");
+        String valueAttribute = (String) js.executeScript("return document.getElementById('checkin_date').value");
         System.out.println("valueAttribute = " + valueAttribute);
 
 

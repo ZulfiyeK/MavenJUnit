@@ -33,6 +33,8 @@ public class C02_JSExecutor_Type extends TestBase {
 
         sendAttributeJS(aramaKutusu,"QA");//method olsuturup
 
+        aramaKutusu.submit();
+
 
 
 

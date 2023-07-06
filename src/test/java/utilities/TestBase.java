@@ -250,16 +250,31 @@ public abstract class TestBase {
 
 //*********************************************************************************************************************
 
-    //Java Script Executor  Sayfa Basi Scroll islemi
+    //Java Script Executor Sayfa Basi Scroll islemi
     public void jsScrollEnd(){
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
 
+//*********************************************************************************************************************
+
+    //Java Script Executor Arama Kutusu islemi
+     public void sendKeysJS(WebElement element, String text){
+
+         JavascriptExecutor js = (JavascriptExecutor) driver;
+         js.executeScript("arguments[0].value='"+text+"'",element);
+
+     }
+//*********************************************************************************************************************
 
 
 
+    public void sendAttributeJS(WebElement element, String text){
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','"+text+"')",element);
+    }
 
 
 

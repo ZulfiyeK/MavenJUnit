@@ -33,7 +33,6 @@ public class C03_JSExecuter_GetValue extends TestBase {
 
       */
 
-
         //Check-In Date kismina 05/25/2023 tarihini yaziniz
         date.clear();
         date.sendKeys("5/25/2023");
@@ -54,11 +53,9 @@ public class C03_JSExecuter_GetValue extends TestBase {
         yukarıdaki örnekteki gibi hangi attributun değeri yazdırmak istersek sonuna attribute adını yazarız.
     */
 
-
         //Check-In Date kisminin degerini yaziniz
         String valueAttribute = (String) js.executeScript("return document.getElementById('checkin_date').value");
         System.out.println("valueAttribute = " + valueAttribute);
-
 
     }
 }

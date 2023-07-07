@@ -20,6 +20,10 @@ public class C01_Log4j extends TestBase {
 
         */
 
+        //log4j icinde "<Root level="ERROR">" kismindaki Eror yerine debug yazarsak  dahil hepsini verir.
+                                                                    //info yazinca debug haric hepsini verir.
+                                                                    //eror yazinca eror ve fatal verir.
+
 
         Logger logger = LogManager.getLogger(C01_Log4j.class);
         logger.info("INFO");

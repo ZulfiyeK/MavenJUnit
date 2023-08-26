@@ -23,16 +23,16 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.8.3</version>
+            <version>4.11.0</version>
         </dependency>
 
-        <!-- Webdrivermanager: suruculeri yonetir ve proje icin gereken surucuyu otomatik olarak yukler-->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>5.3.2</version>
+            <version>5.5.0</version>
         </dependency>
+
 
         <!--Notasyonlari kullanabilmek icin junit dependency' ini yukleriz -->
         <!-- https://mvnrepository.com/artifact/junit/junit -->
